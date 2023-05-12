@@ -269,3 +269,41 @@ function calculateCustomTip() {
 
 //reset
 
+function dealWithResetButton () { 
+    if (
+        customTip.value === "" &&
+        bill.value === "" &&
+        numberOfPeople.value === ""
+    ) {
+        reset.disabled = true;
+        reset.classList.remove("has-reset-activated");
+        numberOfPeople.style.borderColor = "";
+    } else {
+        reset.disabled = false;
+        reset.classList.add("has-reset-activated");
+    }
+    }
+
+function resetAll() {
+    buttons.forEach((button) => {
+        button.classList.remove("active");
+
+    });
+
+    inputs.forEach((input) => {
+        input.value = "";
+    });
+
+    resultTip.innerText = "0.00";
+    resultTotal.innerText = "0.00";
+
+    reset.disabled = true;
+    errorMessage.innerText = ``;
+    numberOfPeople.style.borderColor = "";
+    reset.classList.remove("has-reset-activated");
+    reset.style.backgroundColor = "";
+}
+
+    
+    
+    
