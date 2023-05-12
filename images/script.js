@@ -218,3 +218,54 @@ numberOfPeople.oninput = function () {
 };
 
 // Functions
+
+function calculate() {
+    let tipPerPerson;
+    let totalPerPerson;
+    let tipPercentage;
+
+    if (buttonSelected.length == 0) {
+        tipPercentage = 0;
+    } else {
+        if (customTip.classList.contains('active')) {
+            tipPercentage = customTip.value;
+        } else {
+            tipPercentage = buttonSelected[0].value;
+        }
+        }
+    }
+tipPerPerson = (bill.value * tipPercentage * 0.01) /
+numberOfPeople.value;
+totalPerPerson = bill.value / numberOfPeople.value + tipPerPerson;
+tipPerPerson = tipPerPerson.toFixed(2);
+totalPerPerson = totalPerPerson.toFixed(2);
+
+resultTip.innerText = tipPerPerson;
+resultTotal.innerText = totalPerPerson;
+}
+
+function calculateTip() {
+    buttons.forEach((button) => {
+        button.classList.remove("active");
+});
+this.classList.add("active");
+customTip.classList.remove("active");
+calculate();
+}
+
+function calculateCustomTip() {
+    buttons.forEach((button) => {
+        button.classList.remove("active");
+    });
+    this.classList.add("active");
+
+    if (
+        (bill.value !== "" || bill.value < 0) &&
+        (numberOfPeople.value !== "" || numberOfPeople.value > 0)
+    ) {
+        calculate();
+    }
+}
+
+//reset
+
