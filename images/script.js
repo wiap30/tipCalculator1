@@ -142,3 +142,62 @@ function handleUserInput() {
     document.getElementById("split-total").innerHTML = `$ ${billPerPerson}`;
   }
 }*/
+
+//DOM Variable
+const buttons = document.querySelectorAll(".button");
+const buttonSelected = document.getElementsByClassName("active"); //The selected button with the percentage.
+const reset = document.querySelector("#main-right #button-reset");
+const inputs = document.querySelectorAll(".input");
+const resultTip = document.querySelector("#result-tip");
+const resultTotal = document.querySelector("#result-total");
+const bill = document.querySelector("main #main-left #bill .input");
+const numberOfPeople = document.querySelector(
+  "main #main-left-bottom #number-people .input"
+);
+const errorMessage = document.querySelector(".if-zero-number");
+const customTip = document.querySelector(".custom");
+
+//Event Listeners
+
+customTip.addEventListener("click", calculateCustomTip);
+
+buttons.forEach((button) => {
+    button.addEventListener("click", calculateTip);
+});
+
+//Reset
+
+reset.addEventListener("click", resetAll);
+
+reset.addEventListener("mouseenter", () => {
+    reset.getElementsByClassName.backgroundColor = "var(--lightGrayishCyan)";
+});
+
+reset.addEventListener("mouseleave", () => {
+    reset.getElementsByClassName.backgroundColor = "";
+});
+
+//Oninput
+
+bill.oninput = function (event) {
+    dealWithResetButton();
+
+    if (
+        customTip.value !== "" &&
+        (numberOfPeople.value !== "" || numberOfPeople.value > 0)
+    ) {
+        calculate();
+    }
+    };
+
+    customTip.oninput = function () {
+        dealWithResetButton();
+
+        if (
+            (bill.value !== "" || bill.value <0) &&
+            (numberOfPeople.value !== "" || numberOfPeople.value > 0) 
+        ) {
+            calculate();
+        }
+
+        
