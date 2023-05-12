@@ -162,7 +162,7 @@ const customTip = document.querySelector(".custom");
 customTip.addEventListener("click", calculateCustomTip);
 
 buttons.forEach((button) => {
-    button.addEventListener("click", calculateTip);
+  button.addEventListener("click", calculateTip);
 });
 
 //Reset
@@ -170,34 +170,51 @@ buttons.forEach((button) => {
 reset.addEventListener("click", resetAll);
 
 reset.addEventListener("mouseenter", () => {
-    reset.getElementsByClassName.backgroundColor = "var(--lightGrayishCyan)";
+  reset.getElementsByClassName.backgroundColor = "var(--lightGrayishCyan)";
 });
 
 reset.addEventListener("mouseleave", () => {
-    reset.getElementsByClassName.backgroundColor = "";
+  reset.getElementsByClassName.backgroundColor = "";
 });
 
 //Oninput
 
 bill.oninput = function (event) {
-    dealWithResetButton();
+  dealWithResetButton();
 
-    if (
-        customTip.value !== "" &&
-        (numberOfPeople.value !== "" || numberOfPeople.value > 0)
-    ) {
-        calculate();
-    }
-    };
+  if (
+    customTip.value !== "" &&
+    (numberOfPeople.value !== "" || numberOfPeople.value > 0)
+  ) {
+    calculate();
+  }
+};
 
-    customTip.oninput = function () {
-        dealWithResetButton();
+customTip.oninput = function () {
+  dealWithResetButton();
 
-        if (
-            (bill.value !== "" || bill.value <0) &&
-            (numberOfPeople.value !== "" || numberOfPeople.value > 0) 
-        ) {
-            calculate();
-        }
+  if (
+    (bill.value !== "" || bill.value < 0) &&
+    (numberOfPeople.value !== "" || numberOfPeople.value > 0)
+  ) {
+    calculate();
+  }
+};
 
-        
+numberOfPeople.oninput = function () {
+  dealWithResetButton();
+
+  if (numberOfPeople.value <= 0 || numberOfPeople.value === "") {
+    errorMessage.innerText = `cant be zero`;
+    errorMessage.innerText.style.color = "red";
+    numberOfPeople.style.borderColor = "red";
+    resultTip.innerText = "----";
+    resultTotal.innerText = "----";
+  } else {
+    errorMessage.innerText = ``;
+    numberOfPeople.style.borderColor = "";
+    calculate();
+  }
+};
+
+// Functions
