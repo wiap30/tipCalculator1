@@ -15,7 +15,7 @@
 
 // Note: The elements needed have been queried for you here
 // ** Query elements
-const bill = document.getElementById("bill");
+/*const bill = document.getElementById("bill");
 const gratuityBtns = document.querySelectorAll(".gratuity");
 const customGratuity = document.getElementById("custom-gratuity");
 const people = document.getElementById("people");
@@ -141,4 +141,4 @@ function handleUserInput() {
     document.getElementById("split-tip").innerHTML = `$ ${tipPerPerson}`;
     document.getElementById("split-total").innerHTML = `$ ${billPerPerson}`;
   }
-}
+}*/

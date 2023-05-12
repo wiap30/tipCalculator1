@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 
 :root {
 	--primary-cyan: #26c0ab;
@@ -256,4 +256,19 @@ input[type='number']::placeholder {
 	.btn-container > input {
 		width: 95px;
 	}
+}*/
+
+
+/*CSS solution*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root{
+    --veryDarkCyan : hsl(183, 100%, 15%);
+    --darkGrayishCyan : hsl(186, 14%, 43%);
+    --grayishCyan : hsl(184, 14%, 56%);
+    --lightGrayishCyan : hsl(185, 41%, 84%);
+    --veryLightGrayishCyan : hsl(189, 41%, 97%);
+    --StrongCyan : hsl(172, 67%, 45%);
+    --White : hsl(0, 0%, 100%);
+    --fontSize : 24px;
 }
