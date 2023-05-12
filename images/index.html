@@ -133,6 +133,65 @@
             />
           </div>
         </div>
+
+        <div id="main-left-middle">
+          <p>Select Tip%</p>
+          <div class="percentage-choice">
+            <button class="button" value="5">5%</button>
+            <button class="button" value="10">10%</button>
+            <button class="button" value="15">15%</button>
+            <button class="button" value="20">20%</button>
+            <button class="button" value="50">50%</button>
+            <input
+              type="number"
+              class="input custom"
+              name="bill"
+              placeholder="Custom Tip"
+              value=""
+            />
+          </div>
+        </div>
+
+        <div id="main-left-bottom">
+          <div id="people-information">
+            <p>Number of People</p>
+            <p class="if-zero-number"></p>
+          </div>
+          <div id="number-people">
+            <img src="images/icon-person.svg" alt="icon person" />
+            <input
+              class="input"
+              type="number"
+              name=""
+              placeholder="0"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div id="main-right">
+        <div id="main-right-top">
+          <div>
+            <p class="tip-person">Tip Amount</p>
+            <p class="person">/ person</p>
+          </div>
+          <div class="tip-total">
+            <div class="dollar"></div>
+            <span>$</span><span id="result-tip">0.00</span>
+          </div>
+        </div>
+        <div id="main-right-middle">
+          <div>
+            <p class="tip-person">Total</p>
+            <p class="person">/ person</p>
+          </div>
+          <div class="tip-total">
+            <div class="dollar"></div>
+            <span>$</span><span id="result-total">0.00</span>
+          </div>
+        </div>
+        <button id="button-reset" disabled>Reset</button>
       </div>
     </main>
   </body>
